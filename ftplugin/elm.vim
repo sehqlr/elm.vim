@@ -32,7 +32,11 @@ endfunction
 " REPL
 
 function! ElmRepl()
-  !elm-repl
+  if has('nvim')
+	  edit term://elm-repl
+  else
+	  !elm-repl
+  endif
 endfunction
 
 " Evaluation
